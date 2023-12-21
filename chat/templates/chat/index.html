@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome |{% block title %}{% endblock  %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-pink-600">
+    <nav class="flex item-center justify-between px-6 py-4 bg-pink-800">
+        <div>
+            <a href="/" class="text-xl text-white">Chatter</a>
+        </div>
+        <div class="flex item-center space-x-4">
+            <a href="/" class="text-white hover:text-gray-400">Login</a>
+            <a href="/" class="px-4 rounded-xl text-white hover:text-gray-400">Signup</a>
+
+        </div>
+    </nav>
+    {% block content %}{% endblock  %}
+
+</body>
+</html>
