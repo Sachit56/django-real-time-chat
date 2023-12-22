@@ -1,8 +1,8 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth import login
+from django.contrib.auth import logout,login
 from django.http import HttpResponse
 from .forms import SignupForm
-import traceback
+
 # Create your views here.
 def ChatView(request):
     return render(request,'chat/home.html')
@@ -14,8 +14,8 @@ def SignupView(request):
       try:
 
         if form.is_valid():
-            form.save()
-            print(form.save())
+            user=form.save()
+            login(request,user)
             
 
             return redirect('/')
@@ -31,3 +31,8 @@ def SignupView(request):
     return render(request,'chat/signup.html',{
         'form':form
     })
+
+def RoomView(request):
+   return HttpResponse('Room')
+
+   

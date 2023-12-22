@@ -29,17 +29,16 @@
     </div>
 
     {% if form.errors %}
-     {% for field in form %}
-       {% for errors in field.error %}
-         <div class="mb-5 p-4 rounded-xl bg-red-400 text-white">
+      {% for field in form %}
+        {% for errors in field.errors %}
+          <div class="mb-5 p-4 rounded-xl bg-red-400 text-white">
             <p>{{errors|escape}}</p>
-         </div>
-         
-       
-       {% endfor %}
-     
-     
-     {% endfor %}
+          </div>
+        {% endfor %}
+
+        
+      
+      {% endfor %}
     
     {% endif %}
     <button class="px-5 py-3 rounded-xl text-white bg-pink-800 hover:bg-pink-700">Submit</button>

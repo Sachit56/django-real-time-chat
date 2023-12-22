@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = "/"
 LOGIN_REDIRECT_URL='/rooms/'
 LOGIN_URL='/login/'
 
@@ -73,6 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'chatter.wsgi.application'
+ASGI_APPLICATION = 'chatter.asgi.application'
 
 
 # Database
