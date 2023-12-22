@@ -10,3 +10,12 @@ def RoomView(request):
     return render(request,'room/rooms.html',{
         'rooms':rooms
     })
+
+@login_required
+
+def DetailRoomView(request,slug):
+    room=RoomModel.objects.get(slug=slug)
+
+    return render(request,'room/room.html',{
+        'room':room
+    })

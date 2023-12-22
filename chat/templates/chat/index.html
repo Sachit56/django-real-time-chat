@@ -24,7 +24,6 @@
         <div class="flex item-center space-x-4">
             {% if user.is_authenticated %}
                 <a href="/rooms/" class="py-2 text-white hover:text-gray-400">Rooms</a>
-                <p>Autheticated</p>
                 <form action="{% url 'chat:logout' %}" method="post">
                     {% csrf_token %}
                   <button class="px-4 py-2 rounded-xl bg-pink-600 text-white hover:text-gray-400">Logout</button>
@@ -33,7 +32,6 @@
                 </form>
             {% else %}
                 <a href="/login/" class="py-2 text-white hover:text-gray-400">Login</a>
-                <p>Not authenicated</p>
                 <a href="/signup/" class="px-4 py-2 rounded-xl text-white bg-pink-600 hover:text-gray-400">Signup</a>
             {% endif %}
         </div>
